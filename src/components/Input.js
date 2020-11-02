@@ -54,15 +54,21 @@ export default function Input() {
   const style = {
     fontSize: '1.5em',
     marginBottom: '0.3em',
-    color: inputValue > 10 ? 'royalblue' : 'crimson'
+    color: inputValue > 10 ? 'crimson' : 'royalblue'
   };
+
+    // if(inputValue.length > 10){
+    //   style.color = 'crimson'
+    // }else{
+    //   style.color = 'royalblue'
+    // }
 
   return (
     <div className='widget-input container'>
       <h2>Input</h2>
       <div id='output' style={style}></div> {inputValue.toUpperCase()}
       <div>
-        <input id='input' type='text' onChange={changeInput} /> {/* STEP 6 */}
+        <input id='input' type='text' onChange={changeInput} value={inputValue} /> 
         <button id='resetInput' onClick={reset}>Reset</button>
       </div>
     </div>
